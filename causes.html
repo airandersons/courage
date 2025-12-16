@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Cause - Courage Charity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #f9a826;
+            --accent: #34a853;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --text: #333333;
+            --text-light: #5f6368;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #0d5bb5;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e59400;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #2e8b47;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .cause-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521493951838-3a2b07a0f3c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+
+        .cause-hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cause-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        /* Problem Statement Section */
+        .problem-statement {
+            background-color: var(--light);
+        }
+
+        .problem-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .problem-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .problem-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .problem-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .problem-text {
+            flex: 1;
+        }
+
+        .challenge-list {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+
+        .challenge-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .challenge-list li:before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            background-color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Root Causes Section */
+        .root-causes {
+            background-color: var(--light);
+        }
+
+        .causes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cause-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .cause-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .cause-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 20px;
+            font-size: 2rem;
+        }
+
+        .cause-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .cause-content h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Our Approach Section */
+        .approach-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .approach-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .approach-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .approach-text {
+            flex: 1;
+        }
+
+        .approach-steps {
+            margin-top: 30px;
+            list-style-type: none;
+        }
+
+        .approach-steps li {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .approach-steps li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(26, 115, 232, 0.9)), url('https://images.unsplash.com/photo-1516549655669-df6654e435f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .cause-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .problem-content,
+            .approach-content {
+                flex-direction: column;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .cause-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cause-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .cause-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <div class="logo-text">Courage<span>Charity</span></div>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#causes">Root Causes</a></li>
+                <li><a href="#approach">Our Approach</a></li>
+                <li><a href="index.html#donate">Donate</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cause-hero">
+        <div class="container">
+            <h1>Understanding Our Cause</h1>
+            <p>Street children in Kampala face unimaginable challenges every day. Learn about the problem, its root causes, and how we're working to make a difference.</p>
+            <a href="#problem" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="problem-statement" id="problem">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Problem: Street Children in Kampala</h2>
+                <p>Understanding the scale and severity of the issue</p>
+            </div>
+            
+            <div class="problem-content">
+                <div class="problem-img">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Street children in Kampala">
+                </div>
+                <div class="problem-text">
+                    <h3>A Growing Crisis</h3>
+                    <p>In Kampala, Uganda's capital city, an estimated 15,000 children live and work on the streets. These children face daily threats to their safety, health, and future prospects. Without intervention, they remain trapped in a cycle of poverty and vulnerability.</p>
+                    
+                    <p>Street children are among the most marginalized and vulnerable populations in Uganda. They lack access to basic necessities like food, shelter, healthcare, and education, making them susceptible to exploitation, abuse, and long-term psychological trauma.</p>
+                    
+                    <h3>Daily Challenges</h3>
+                    <ul class="challenge-list">
+                        <li><strong>Lack of Shelter:</strong> Sleeping on streets, in markets, or in abandoned buildings exposes children to violence, harsh weather, and health risks.</li>
+                        <li><strong>Food Insecurity:</strong> Many street children survive on one meal a day, often from garbage or begging, leading to malnutrition.</li>
+                        <li><strong>No Access to Education:</strong> Without schooling, children miss critical development opportunities and remain trapped in poverty.</li>
+                        <li><strong>Health Risks:</strong> Limited access to healthcare increases vulnerability to diseases, injuries, and mental health issues.</li>
+                        <li><strong>Exploitation:</strong> Street children are vulnerable to child labor, trafficking, and various forms of abuse.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="section-title">
+                <h2>By the Numbers</h2>
+                <p>Understanding the scope of the issue through statistics</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-child"></i>
+                    <div class="stat-number">15,000+</div>
+                    <h3>Street Children</h3>
+                    <p>Estimated number of children living on Kampala's streets</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-school"></i>
+                    <div class="stat-number">60%</div>
+                    <h3>No Education</h3>
+                    <p>Street children who have never attended school</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-utensils"></i>
+                    <div class="stat-number">1 in 3</div>
+                    <h3>Food Insecure</h3>
+                    <p>Street children who eat only one meal per day</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-home"></i>
+                    <div class="stat-number">70%</div>
+                    <h3>No Shelter</h3>
+                    <p>Street children who sleep in open spaces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Root Causes Section -->
+    <section class="root-causes" id="causes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Root Causes</h2>
+                <p>Understanding why children end up on the streets</p>
+            </div>
+            
+            <div class="causes-grid">
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Poverty</h3>
+                        <p>Extreme poverty forces families to send children to work on the streets or leads to family breakdowns where children are abandoned.</p>
+                    </div>
+                </div>
+                
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Family Breakdown</h3>
+                        <p>Death of parents, divorce, domestic violence, and neglect leave children with no support system and push them to the streets.</p>
+                    </div>
+                </div>
+                
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Lack of Education</h3>
+                        <p>When families cannot afford school fees, children often end up on streets instead of in classrooms, limiting their future opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Peer Influence</h3>
+                        <p>Children already on streets often encourage others to join them, creating a cycle that's difficult to break.</p>
+                    </div>
+                </div>
+                
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Health Issues</h3>
+                        <p>Families struggling with HIV/AIDS, disabilities, or chronic illnesses often cannot care for children, leading to abandonment.</p>
+                    </div>
+                </div>
+                
+                <div class="cause-card">
+                    <div class="cause-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="cause-content">
+                        <h3>Rural-Urban Migration</h3>
+                        <p>Children migrating to cities in search of opportunities often end up on streets when expected support fails to materialize.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Holistic Approach</h2>
+                <p>How Courage Charity addresses the problem</p>
+            </div>
+            
+            <div class="approach-content">
+                <div class="approach-img">
+                    <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Our approach to helping street children">
+                </div>
+                <div class="approach-text">
+                    <h3>A Multi-Faceted Solution</h3>
+                    <p>At Courage Charity, we understand that addressing street children's needs requires a comprehensive approach that tackles both immediate needs and underlying causes.</p>
+                    
+                    <ul class="approach-steps">
+                        <li><strong>Outreach & Identification:</strong> Our team regularly visits known street child hotspots to build trust and identify children needing help.</li>
+                        <li><strong>Immediate Rescue:</strong> We provide emergency shelter, food, medical care, and psychological first aid to newly rescued children.</li>
+                        <li><strong>Rehabilitation:</strong> Children receive counseling, education assessment, and life skills training in a safe environment.</li>
+                        <li><strong>Family Reunification:</strong> Where possible and safe, we work to reunite children with their families, providing support to prevent re-streeting.</li>
+                        <li><strong>Education & Skills:</strong> We enroll children in schools or vocational training programs to equip them for self-sufficient futures.</li>
+                        <li><strong>Community Integration:</strong> We work with local communities to reduce stigma and create supportive environments for reintegrated children.</li>
+                        <li><strong>Advocacy:</strong> We advocate for policy changes and increased resources for street children at local and national levels.</li>
+                    </ul>
+                    
+                    <h3>Why Our Approach Works</h3>
+                    <p>Our model has proven successful because we address the whole child—their physical, emotional, educational, and social needs. We don't just remove children from streets; we provide pathways to sustainable, dignified lives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Us in Making a Difference</h2>
+            <p>Now that you understand the problem and our approach, consider joining our cause. Your support can help transform a child's life and break the cycle of street life in Kampala.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html#donate" class="btn">Donate Now</a>
+                <a href="index.html#contact" class="btn btn-secondary">Volunteer</a>
+                <a href="about.html" class="btn btn-accent">Learn About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Courage Charity</h3>
+                    <p>Founded by Brian Wambeso, we are dedicated to helping street children in Kampala, Uganda through shelter, education, healthcare, and love.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#problem">The Problem</a></li>
+                        <li><a href="#causes">Root Causes</a></li>
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="index.html#donate">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@couragecharity.org</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Courage Charity Organization. Founded by Brian Wambeso. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '0';
+            } else {
+                header.style.padding = '10px 0';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate statistics on scroll
+        const animateStats = () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const rect = stat.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if(rect.top <= windowHeight - 100) {
+                    if(!stat.classList.contains('animated')) {
+                        const finalNumber = stat.textContent;
+                        let currentNumber = 0;
+                        const increment = parseInt(finalNumber) / 50;
+                        
+                        const timer = setInterval(() => {
+                            currentNumber += increment;
+                            if(currentNumber >= parseInt(finalNumber)) {
+                                currentNumber = finalNumber;
+                                clearInterval(timer);
+                                stat.classList.add('animated');
+                            }
+                            stat.textContent = Math.floor(currentNumber).toLocaleString();
+                        }, 30);
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateStats);
+        // Initial check in case stats are already in view
+        animateStats();
+    </script>
+</body>
+  </html>
